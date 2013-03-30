@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+     ServerName sebastian.local
+     DocumentRoot /Users/groupon/Sites/sebastian
+     #LogFormat "%h %l %u %t \"%r\" %>s %b" common
+     #CustomLog /logs/access_log common
+     ErrorLog /Users/groupon/Sites/sebastian/logs/error.log
+     SetEnv APPLICATION_ENV "development"
+     <Directory /Users/groupon/Sites/sebastian>
+          Options Indexes
+          DirectoryIndex index.html index.php
+          AllowOverride All
+          Order allow,deny
+          Allow from all
+     </Directory>
+</VirtualHost>
